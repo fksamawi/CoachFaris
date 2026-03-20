@@ -9,100 +9,91 @@ interface Section {
   content: React.ReactNode;
 }
 
-// --- Data ---
+// --- Content Blocks (Separated to prevent parsing errors) ---
+
+const WhoContent = () => (
+  <div className="space-y-4">
+    <p>
+      I partner with &quot;unicorn leaders&quot;—high performers who have never fit
+      neatly into one box and are tired of twisting themselves to match titles.
+    </p>
+    <p className="text-[#798686]">You might be:</p>
+    <ul className="list-disc space-y-1 pl-5 text-[#798686]">
+      <li>Stepping into your first executive or regional role.</li>
+      <li>Questioning whether to double down or pivot.</li>
+      <li>Wrestling with identity outside your job title.</li>
+    </ul>
+  </div>
+);
+
+const WhatContent = () => (
+  <div className="space-y-4">
+    <p>
+      Clients come to me when something important has shifted—inside them,
+      around them, or both—and the old way of operating no longer works.
+    </p>
+    <ul className="list-disc space-y-1 pl-5 text-[#798686]">
+      <li>Making a clear, grounded decision about a next role.</li>
+      <li>Redefining success so it aligns with your actual values.</li>
+    </ul>
+  </div>
+);
+
+const ApproachContent = () => (
+  <div className="space-y-4">
+    <p>
+      Every engagement starts with deep listening and honest conversation—not a
+      pre-packaged programme.
+    </p>
+    <p>
+      I&apos;m direct but not harsh, pragmatic but not cynical. We focus on the
+      few decisive moves that move the needle.
+    </p>
+  </div>
+);
+
+const AboutContent = () => (
+  <div className="space-y-4">
+    <p>
+      With over 15 years of experience across Europe and the Middle East,
+      I&apos;ve worked across the HR value chain and executive development.
+    </p>
+    <p>
+      I bring a mix of strategic thinking, psychological insight, and regional
+      nuance.
+    </p>
+  </div>
+);
+
+const StartedContent = () => (
+  <div className="space-y-4">
+    <p>
+      We begin with a 30-minute Clarity Session—a focused conversation on where
+      you are now and what&apos;s at stake.
+    </p>
+    <ul className="list-disc space-y-1 pl-5 text-[#798686]">
+      <li>Clarify the decision, transition, or tension.</li>
+      <li>Identify internal and structural drivers.</li>
+    </ul>
+  </div>
+);
+
+// --- Data Arrays ---
 const primarySections: Section[] = [
-  {
-    id: "who",
-    label: "Who I work with",
-    content: (
-      <div className="space-y-4">
-        <p>
-          I partner with &quot;unicorn leaders&quot;—high performers who have never fit
-          neatly into one box and are tired of twisting themselves to match titles.
-        </p>
-        <p className="text-[#798686]">You might be:</p>
-        <ul className="list-disc space-y-1 pl-5 text-[#798686]">
-          <li>Stepping into your first executive or regional role.</li>
-          <li>Questioning whether to double down or pivot.</li>
-          <li>Wrestling with identity outside your job title.</li>
-        </ul>
-      </div>
-    ),
-  },
-  {
-    id: "what",
-    label: "What we work on",
-    content: (
-      <div className="space-y-4">
-        <p>
-          Clients come to me when something important has shifted—inside them,
-          around them, or both—and the old way of operating no longer works.
-        </p>
-        <ul className="list-disc space-y-1 pl-5 text-[#798686]">
-          <li>Making a clear, grounded decision about a next role.</li>
-          <li>Redefining success so it aligns with your actual values.</li>
-        </ul>
-      </div>
-    ),
-  },
-  {
-    id: "approach",
-    label: "My approach",
-    content: (
-      <div className="space-y-4">
-        <p>
-          Every engagement starts with deep listening and honest conversation—not a
-          pre-packaged programme.
-        </p>
-        <p>
-          I&apos;m direct but not harsh, pragmatic but not cynical. We focus on the
-          few decisive moves that move the needle.
-        </p>
-      </div>
-    ),
-  },
+  { id: "who", label: "Who I work with", content: <WhoContent /> },
+  { id: "what", label: "What we work on", content: <WhatContent /> },
+  { id: "approach", label: "My approach", content: <ApproachContent /> },
 ];
 
 const secondarySections: Section[] = [
-  {
-    id: "about",
-    label: "About me",
-    content: (
-      <div className="space-y-4">
-        <p>
-          With over 15 years of experience across Europe and the Middle East,
-          I&apos;ve worked across the HR value chain and executive development.
-        </p>
-        <p>
-          I bring a mix of strategic thinking, psychological insight, and regional
-          nuance.
-        </p>
-      </div>
-    ),
-  },
-  {
-    id: "started",
-    label: "Getting started",
-    content: (
-      <div className="space-y-4">
-        <p>
-          We begin with a 30-minute Clarity Session—a focused conversation on where
-          you are now and what&apos;s at stake.
-        </p>
-        <ul className="list-disc space-y-1 pl-5 text-[#798686]">
-          <li>Clarify the decision, transition, or tension.</li>
-          <li>Identify internal and structural drivers.</li>
-        </ul>
-      </div>
-    ),
-  },
+  { id: "about", label: "About me", content: <AboutContent /> },
+  { id: "started", label: "Getting started", content: <StartedContent /> },
 ];
 
+// --- Main Component ---
 export function NavLinks() {
   const [openPrimaryId, setOpenPrimaryId] = useState<string | null>("who");
   const [openSecondaryId, setOpenSecondaryId] = useState<string | null>(null);
-  
-  // Using a more explicit type for the ref record to satisfy the linter
   const contentRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const [heights, setHeights] = useState<Record<string, number>>({});
 
@@ -110,9 +101,7 @@ export function NavLinks() {
     const newHeights: Record<string, number> = {};
     [...primarySections, ...secondarySections].forEach((s) => {
       const el = contentRefs.current[s.id];
-      if (el) {
-        newHeights[s.id] = el.scrollHeight;
-      }
+      if (el) newHeights[s.id] = el.scrollHeight;
     });
     setHeights(newHeights);
   }, []);
@@ -123,8 +112,12 @@ export function NavLinks() {
     return () => window.removeEventListener("resize", measureHeights);
   }, [measureHeights]);
 
-  // Sub-render function to keep logic clean but within the main component scope
-  const renderGroup = (sections: Section[], currentId: string | null, setter: (id: string | null) => void, variant: "outlined" | "solid") => (
+  const renderGroup = (
+    sections: Section[],
+    currentId: string | null,
+    setter: (id: string | null) => void,
+    variant: "outlined" | "solid"
+  ) => (
     <nav className="space-y-4">
       <div className="flex flex-wrap items-center justify-center gap-6">
         {sections.map((s) => {
