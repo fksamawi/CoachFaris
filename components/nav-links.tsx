@@ -182,7 +182,7 @@ export function NavLinks() {
       <div className="mt-8 flex flex-col items-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500 fill-mode-both">
         <a
           href="https://calendar.app.google/82cuX3WRaRWwDAdu6"
-          className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[#1d1716] px-10 py-4 text-sm font-semibold text-[#f2f3f3] hover:bg-[#303636] transition-all active:scale-95 shadow-lg shadow-black/5"
+          className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-[#af765a] px-10 py-4 text-base font-semibold text-[#f0f2f5] hover:bg-[#a86443] transition-all active:scale-95 shadow-lg shadow-black/5"
         >
           Be Different. Make A Difference.
         </a>
