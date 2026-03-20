@@ -1,21 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer base {
   :root {
-    /* Your Custom Palette */
+    /* Your Custom Palette Variables */
     --cool-steel-400: #949e9e;
     --cool-steel-900: #181b1b;
     --thistle-50: #f1eff5;
     --thistle-100: #e2e0eb;
     --deep-mocha-900: #1d1716;
 
-    /* Mapping to UI Theme */
+    /* Shadcn/UI Required Mappings (if you are using shadcn) */
     --background: 0 0% 100%;
-    --foreground: 0 0% 11%; /* deep-mocha-950 */
+    --foreground: 20 20% 10%; /* deep-mocha-950 equivalent */
     --muted: 255 15% 95%; /* thistle-50 */
-    --muted-foreground: 180 5% 40%; /* cool-steel-500 equivalent */
+    --muted-foreground: 180 5% 40%; /* cool-steel-500 */
     --border: 180 5% 80%; /* cool-steel-200 */
-    
-    /* Accordion Specifics */
-    --accordion-border: #afb6b6; /* cool-steel-300 */
-    --accordion-bg: #f1eff5;     /* thistle-50 */
+  }
+
+  /* Optional: Standard dark mode variables */
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
