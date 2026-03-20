@@ -9,42 +9,22 @@ interface Section {
   content: React.ReactNode;
 }
 
-// --- Content Components ---
+// --- Content (Updated with Jet Black text) ---
 const WhoContent = () => (
-  <div className="space-y-4">
+  <div className="space-y-4 text-[#232f2a]">
     <p>I partner with &quot;unicorn leaders&quot;—high performers who have never fit neatly into one box...</p>
-    <ul className="list-disc space-y-1 pl-5 opacity-80">
-      <li>Stepping into your first executive or regional role.</li>
-      <li>Questioning whether to double down or pivot.</li>
+    <ul className="list-disc space-y-1 pl-5 opacity-90">
+      <li>Stepping into executive roles.</li>
+      <li>Questioning career pivots.</li>
     </ul>
   </div>
 );
 
-const WhatContent = () => (
-  <div className="space-y-4">
-    <p>Clients come to me when something important has shifted—inside them, around them, or both...</p>
-  </div>
-);
+const WhatContent = () => <div className="text-[#232f2a]"><p>We focus on decisive moves that change how you lead.</p></div>;
+const ApproachContent = () => <div className="text-[#232f2a]"><p>Direct, pragmatic partnership. No motivational theatre.</p></div>;
+const AboutContent = () => <div className="text-[#f0f2f5]"><p>15+ years experience across Europe and the Middle East.</p></div>;
+const StartedContent = () => <div className="text-[#f0f2f5]"><p>30-minute Clarity Session to identify what is at stake.</p></div>;
 
-const ApproachContent = () => (
-  <div className="space-y-4">
-    <p>Every engagement starts with deep listening and honest conversation—not a pre-packaged programme.</p>
-  </div>
-);
-
-const AboutContent = () => (
-  <div className="space-y-4">
-    <p>With over 15 years of experience across Europe and the Middle East...</p>
-  </div>
-);
-
-const StartedContent = () => (
-  <div className="space-y-4">
-    <p>We begin with a 30-minute Clarity Session—a focused conversation on where you are now.</p>
-  </div>
-);
-
-// --- Data ---
 const primarySections: Section[] = [
   { id: "who", label: "Who I work with", content: <WhoContent /> },
   { id: "what", label: "What we work on", content: <WhatContent /> },
@@ -60,118 +40,89 @@ export function NavLinks() {
   const [openPrimaryId, setOpenPrimaryId] = useState<string | null>("who");
   const [openSecondaryId, setOpenSecondaryId] = useState<string | null>("about");
   const [heights, setHeights] = useState<Record<string, number>>({});
-  
   const contentRefs = useRef<Record<string, HTMLDivElement | null>>({});
-  const containerRef1 = useRef<HTMLDivElement>(null);
-  const containerRef2 = useRef<HTMLDivElement>(null);
-  const [isVisible1, setIsVisible1] = useState(false);
-  const [isVisible2, setIsVisible2] = useState(false);
 
-  // Intersection Observer for Scroll Animation
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setIsVisible1(true); },
-      { threshold: 0.1 }
-    );
-    if (containerRef1.current) observer.observe(containerRef1.current);
-    return () => observer.disconnect();
-  }, []);
+  // Trigger Fade-In on Scroll Logic
+  const group1Ref = useRef<HTMLDivElement>(null);
+  const group2Ref = useRef<HTMLDivElement>(null);
+  const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setIsVisible2(true); },
-      { threshold: 0.1 }
-    );
-    if (containerRef2.current) observer.observe(containerRef2.current);
-    return () => observer.disconnect();
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.target === group1Ref.current && e.isIntersecting) setShow1(true);
+        if (e.target === group2Ref.current && e.isIntersecting) setShow2(true);
+      });
+    }, { threshold: 0.1 });
+    if (group1Ref.current) obs.observe(group1Ref.current);
+    if (group2Ref.current) obs.observe(group2Ref.current);
+    return () => obs.disconnect();
   }, []);
 
-  const measureHeights = useCallback(() => {
-    const newHeights: Record<string, number> = {};
-    [...primarySections, ...secondarySections].forEach((s) => {
-      const el = contentRefs.current[s.id];
-      if (el) newHeights[s.id] = el.scrollHeight;
+  const measure = useCallback(() => {
+    const h: Record<string, number> = {};
+    [...primarySections, ...secondarySections].forEach(s => {
+      if (contentRefs.current[s.id]) h[s.id] = contentRefs.current[s.id]!.scrollHeight;
     });
-    setHeights(newHeights);
+    setHeights(h);
   }, []);
 
   useEffect(() => {
-    measureHeights();
-    window.addEventListener("resize", measureHeights);
-    return () => window.removeEventListener("resize", measureHeights);
-  }, [measureHeights]);
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [measure]);
 
   const renderGroup = (
-    sections: Section[],
-    currentId: string | null,
-    setter: (id: string | null) => void,
+    sections: Section[], 
+    currentId: string | null, 
+    setter: (id: string | null) => void, 
     variant: "outlined" | "solid",
-    isVisible: boolean,
+    visible: boolean,
     ref: React.RefObject<HTMLDivElement | null>
   ) => (
-    <nav 
-      ref={ref}
-      className={`space-y-4 transition-all duration-1000 transform ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
+    <div 
+      ref={ref} 
+      className={`transition-all duration-1000 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
     >
-      <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-        {sections.map((s) => {
-          const isActive = currentId === s.id;
+      <div className="flex flex-wrap justify-center gap-6 mb-4">
+        {sections.map(s => {
+          const active = currentId === s.id;
           return (
             <button
               key={s.id}
-              type="button"
-              onClick={() => setter(isActive ? null : s.id)}
-              className={`group flex items-center gap-1.5 text-xs sm:text-sm transition-all duration-300 ${
-                isActive ? "font-bold text-[#a86443]" : "font-medium text-[#af765a] hover:text-[#a86443]"
-              }`}
+              onClick={() => setter(active ? null : s.id)}
+              className={`text-sm transition-colors duration-300 ${active ? "font-bold text-[#a86443]" : "font-medium text-[#af765a] hover:text-[#a86443]"}`}
             >
               {s.label}
-              <svg
-                className={`transition-transform duration-300 ${isActive ? "rotate-180" : "opacity-40"}`}
-                width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"
-              >
-                <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
             </button>
           );
         })}
       </div>
-      {sections.map((s) => {
-        const isOpen = currentId === s.id;
+      {sections.map(s => {
+        const open = currentId === s.id;
         return (
-          <div
-            key={s.id}
-            className="overflow-hidden transition-all duration-500 ease-in-out"
-            style={{ maxHeight: isOpen ? `${(heights[s.id] ?? 0) + 64}px` : "0px", opacity: isOpen ? 1 : 0 }}
-          >
-            <div
-              ref={(el) => { contentRefs.current[s.id] = el; }}
-              className={`p-6 rounded-2xl text-sm leading-relaxed ${
-                variant === "outlined" 
-                  ? "border border-[#a86443] bg-[#f0f2f5] text-[#232f2a]" 
-                  : "bg-[#af765a] border border-transparent text-[#f0f2f5]"
-              }`}
+          <div key={s.id} className="overflow-hidden transition-all duration-500" style={{ maxHeight: open ? `${(heights[s.id] ?? 0) + 40}px` : "0" }}>
+            <div 
+              ref={el => { contentRefs.current[s.id] = el; }} 
+              className={`p-6 rounded-2xl text-sm mb-4 ${variant === "outlined" ? "bg-[#f0f2f5] border border-[#a86443]" : "bg-[#af765a]"}`}
             >
               {s.content}
             </div>
           </div>
         );
       })}
-    </nav>
+    </div>
   );
 
   return (
-    <div className="space-y-16 px-4 sm:px-0 max-w-2xl mx-auto">
-      {renderGroup(primarySections, openPrimaryId, setOpenPrimaryId, "outlined", isVisible1, containerRef1)}
-      {renderGroup(secondarySections, openSecondaryId, setOpenSecondaryId, "solid", isVisible2, containerRef2)}
+    <div className="space-y-10 max-w-2xl mx-auto w-full px-4">
+      {renderGroup(primarySections, openPrimaryId, setOpenPrimaryId, "outlined", show1, group1Ref)}
+      {renderGroup(secondarySections, openSecondaryId, setOpenSecondaryId, "solid", show2, group2Ref)}
 
-      <div className={`mt-12 flex flex-col items-center gap-4 transition-all duration-1000 delay-300 ${isVisible2 ? "opacity-100" : "opacity-0"}`}>
-        <a
-          href="https://calendar.app.google/82cuX3WRaRWwDAdu6"
-          className="w-full sm:w-64 inline-flex items-center justify-center rounded-full bg-[#5c7a72] px-8 py-4 text-sm font-semibold text-[#f0f2f5] hover:opacity-90 transition-all active:scale-95"
-        >
+      <div className={`flex flex-col items-center gap-4 transition-all duration-1000 delay-300 ${show2 ? "opacity-100" : "opacity-0"}`}>
+        <a href="#" className="bg-[#5c7a72] text-[#f0f2f5] px-8 py-3 rounded-full text-sm font-bold hover:brightness-110 transition-all">
           Be Different. Make A Difference.
         </a>
         <p className="text-[10px] uppercase tracking-widest text-[#5e4c31] font-bold">
