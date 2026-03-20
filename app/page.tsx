@@ -27,11 +27,10 @@ export default function Page() {
         {/* CTA Button Linked to Google Calendar */}
         <div className="mt-8 flex justify-center">
           <a
-            href="https://calendar.app.google/82cuX3WRaRWwDAdu6"
+          href="https://calendar.app.google/82cuX3WRaRWwDAdu6"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-200 hover:shadow-[0_0_20px_hsl(147,22%,92%)] hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          >
+            className="inline-flex items-center justify-center rounded-xl bg-[#af765a] px-8 py-3.5 text-base font-semibold text-[#f0f2f5] shadow-sm transition-all duration-200 hover:bg-[#a86443] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
             Book a Clarity Session
           </a>
           <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[#949e9e] font-medium">
