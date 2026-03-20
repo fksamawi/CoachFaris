@@ -37,7 +37,7 @@ export default function Page() {
         </div>
 
         {/* Navigation Links */}
-        <div className="mt-8" border border-gray-200 rounded-2xl p-6>
+        <div className="mt-8">
           <NavLinks openId={openId} onToggle={setOpenId} />
         </div>
 
