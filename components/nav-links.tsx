@@ -67,7 +67,7 @@ const AboutContent = () => (
 const StartedContent = () => (
   <div className="space-y-4">
     <p>
-      We begin with a 30-minute Clarity Session—a focused conversation on where
+      We begin with a 30-minute Clarity Session — a focused conversation on where
       you are now and what&apos;s at stake.
     </p>
     <ul className="list-disc space-y-1 pl-5 text-sm text-[#798686]">
@@ -187,7 +187,7 @@ export function NavLinks() {
           Be Different.<br />Make A Difference.
         </a>
         <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[#949e9e] font-medium">
-          30 minutes. No obligation.
+          30 minute call. No obligation.
         </p>
       </div>
     </div>
