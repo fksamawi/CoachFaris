@@ -187,7 +187,7 @@ export function NavLinks() {
           Be Different.<br />Make A Difference.
         </a>
         <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[#949e9e] font-medium">
-          30 minutes. One conversation. No obligation.
+          30 minutes. No obligation.
         </p>
       </div>
     </div>
