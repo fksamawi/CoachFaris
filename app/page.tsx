@@ -34,6 +34,9 @@ export default function Page() {
           >
             Book a Clarity Session
           </a>
+          <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[#949e9e] font-medium">
+          30 minute call. No obligation.
+        </p>
         </div>
 
         {/* Navigation Links */}
