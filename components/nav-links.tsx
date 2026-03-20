@@ -42,7 +42,7 @@ const accordionSections = [
     id: "what",
     label: "What we work on",
     content: (
-      <div className="space-y-4">
+      <div className="space-y-4" border border-gray-400 rounded-2xl p-6">
         <p>
           Clients come to me when something important has shifted—inside them, around them,
           or both—and the old way of operating no longer works.
@@ -64,7 +64,7 @@ const accordionSections = [
     id: "approach",
     label: "My approach",
     content: (
-      <div className="space-y-4">
+      <div className="space-y-4" border border-gray-400 rounded-2xl p-6">
         <p>
           Every engagement starts with deep listening and honest conversation—not a pre‑packaged programme.
         </p>
