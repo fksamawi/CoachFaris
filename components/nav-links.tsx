@@ -19,8 +19,8 @@ const accordionSections = [
   {
     id: "who",
     label: "Who I work with",
-    content: (
-      <div className="space-y-4" border border-gray-200 rounded-2xl p-6>>
+    content: 
+    <div className="space-y-4 border border-gray-200 rounded-2xl p-6">
         <p>
           I partner with “unicorn leaders”—high performers who have never fit neatly
           into one box and are tired of twisting themselves to match titles, org charts,
