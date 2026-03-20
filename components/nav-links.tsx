@@ -93,7 +93,7 @@ export function NavLinks() {
   // Set defaults: Who and About are open
   const [openPrimaryId, setOpenPrimaryId] = useState<string | null>("who");
   const [openSecondaryId, setOpenSecondaryId] = useState<string | null>("about");
-  
+
   const contentRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const [heights, setHeights] = useState<Record<string, number>>({});
 
@@ -174,7 +174,7 @@ export function NavLinks() {
     <div className="space-y-12 px-2 sm:px-0">
       {/* Group 1 fades in first */}
       {renderGroup(primarySections, openPrimaryId, setOpenPrimaryId, "outlined", "delay-0")}
-      
+
       {/* Group 2 fades in slightly after */}
       {renderGroup(secondarySections, openSecondaryId, setOpenSecondaryId, "solid", "delay-300")}
 
