@@ -245,3 +245,4 @@ export function NavLinks({ openId, onToggle }: NavLinksProps) {
       </div>
     </div>
   );
+}
