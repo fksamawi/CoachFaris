@@ -20,7 +20,7 @@ const accordionSections = [
     id: "who",
     label: "Who I work with",
     content: 
-    <div className="space-y-4 border border-gray-200 rounded-2xl p-6">
+    <div className="space-y-4 border border-gray-400 rounded-2xl p-6">
         <p>
           I partner with “unicorn leaders”—high performers who have never fit neatly
           into one box and are tired of twisting themselves to match titles, org charts,
@@ -207,7 +207,7 @@ export function NavLinks({ openId, onToggle }: NavLinksProps) {
                 ref={(el) => {
                   contentRefs.current[section.id] = el;
                 }}
-                className="pt-6 text-left text-sm leading-relaxed text-muted-foreground"
+                className="pt-6 text-left text-sm leading-relaxed"
               >
                 {section.content}
               </div>
