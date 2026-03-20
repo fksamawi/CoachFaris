@@ -184,7 +184,7 @@ export function NavLinks() {
           href="https://calendar.app.google/82cuX3WRaRWwDAdu6"
           className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-[#af765a] px-10 py-4 text-base font-semibold text-[#f0f2f5] hover:bg-[#a86443] transition-all active:scale-95 shadow-lg shadow-black/5"
         >
-          Be Different. Make A Difference.
+          Be Different.<br />Make A Difference.
         </a>
         <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[#949e9e] font-medium">
           30 minutes. One conversation. No obligation.
