@@ -25,7 +25,7 @@ export default function Page() {
         </div>
 
         {/* CTA Button Linked to Google Calendar */}
-        <div className="mt-8 flex justify-center">
+        <div className="mt-8 flex flex-col items-center gap-3">
           <a
           href="https://calendar.app.google/82cuX3WRaRWwDAdu6"
             target="_blank"
