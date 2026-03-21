@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     description:
       "Executive coaching for high-performing leaders navigating pivotal career and identity moments.",
   },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export const viewport: Viewport = {
