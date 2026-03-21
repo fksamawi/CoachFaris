@@ -8,9 +8,25 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Faris Coaching | Strategic Clarity for Leaders",
+  title: "CoachFaris — Strategic clarity for leaders at a crossroads",
   description:
-    "Executive coaching for leaders at a crossroads. Gain strategic clarity, align your vision, and move forward with confidence.",
+    "Executive coaching for high-performing leaders navigating pivotal career and identity moments.",
+  metadataBase: new URL("https://www.coachfaris.com"),
+  openGraph: {
+    title: "CoachFaris — Strategic clarity for leaders at a crossroads",
+    description:
+      "Executive coaching for high-performing leaders navigating pivotal career and identity moments.",
+    url: "https://www.coachfaris.com",
+    siteName: "CoachFaris",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CoachFaris — Strategic clarity for leaders at a crossroads",
+    description:
+      "Executive coaching for high-performing leaders navigating pivotal career and identity moments.",
+  },
 };
 
 export const viewport: Viewport = {

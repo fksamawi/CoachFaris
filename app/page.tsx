@@ -1,13 +1,8 @@
-"use client";
-
-import { useState } from "react";
 import { ProfileAvatar } from "@/components/profile-avatar";
 import { NavLinks } from "@/components/nav-links";
 import { SocialFooter } from "@/components/social-footer";
 
 export default function Page() {
-  const [openId, setOpenId] = useState<string | null>(null);
-
   return (
     <main className="flex min-h-svh items-center justify-center bg-background px-4 py-16">
       <div className="w-full max-w-md rounded-3xl bg-card px-8 py-12 shadow-[0_4px_60px_-12px_rgba(0,0,0,0.08)]">
@@ -27,20 +22,21 @@ export default function Page() {
         {/* CTA Button Linked to Google Calendar */}
         <div className="mt-8 flex flex-col items-center gap-3">
           <a
-          href="https://calendar.app.google/82cuX3WRaRWwDAdu6"
+            href="https://calendar.app.google/82cuX3WRaRWwDAdu6"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-xl bg-[#af765a] px-8 py-3.5 text-base font-semibold text-[#f0f2f5] shadow-sm transition-all duration-200 hover:bg-[#a86443] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+            className="inline-flex items-center justify-center rounded-xl bg-[#af765a] px-8 py-3.5 text-base font-semibold text-[#f0f2f5] shadow-sm transition-all duration-200 hover:bg-[#a86443] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          >
             Book a Clarity Session
           </a>
           <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[#949e9e] font-medium">
-          30 minute call. No obligation.
-        </p>
+            30 minute call. No obligation.
+          </p>
         </div>
 
         {/* Navigation Links */}
         <div className="mt-8">
-          <NavLinks openId={openId} onToggle={setOpenId} />
+          <NavLinks />
         </div>
 
         {/* Divider */}
