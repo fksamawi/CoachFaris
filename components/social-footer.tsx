@@ -36,7 +36,7 @@ export function SocialFooter() {
 
         {/* Content Container */}
         <div className="flex flex-col items-center gap-6 text-center">
-         <h3
+         <h4
             className="text-[#f0f2f5]"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
@@ -48,7 +48,7 @@ export function SocialFooter() {
             }}
           >
             Connect. Commit. Create.
-          </h3>
+          </h4>
           <a
             href="https://www.linkedin.com/in/fsamawi"
             target="_blank"
