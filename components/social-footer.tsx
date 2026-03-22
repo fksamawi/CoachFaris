@@ -24,35 +24,27 @@ export function SocialFooter() {
         }}
       />
 
-      {/* Dark vignette behind image */}
-      <div
-        className="pointer-events-none absolute inset-0 z-0"
-        style={{
-          background: "linear-gradient(105deg, rgba(35,47,42,0.5) 0%, transparent 50%)",
-        }}
-      />
+      {/* Main row: image left, content right */}
+      <div className="relative mx-auto flex max-w-5xl items-end">
 
-      {/* Main row */}
-      <div className="relative z-10 mx-auto flex max-w-5xl items-end">
-
-        {/* Left: photo */}
-        <div className="relative shrink-0 pl-10">
+        {/* Left: Faris — flush left, no padding */}
+        <div className="relative shrink-0 self-end">
           <img
             src="/faris-footer.png"
             alt="Coach Faris"
-            className="block h-[280px] w-auto object-contain object-bottom brightness-95 drop-shadow-xl"
+            className="block h-[300px] w-auto object-contain object-bottom"
           />
-          {/* Fade feet into footer */}
+          {/* Subtle fade at feet */}
           <div
-            className="pointer-events-none absolute bottom-0 left-0 right-0 h-12"
+            className="pointer-events-none absolute bottom-0 left-0 right-0 h-10"
             style={{
               background: "linear-gradient(to top, #5c7a72 0%, transparent 100%)",
             }}
           />
         </div>
 
-        {/* Right: content */}
-        <div className="flex flex-1 flex-col items-end gap-5 px-12 pb-10 pt-14 text-right">
+        {/* Right: headline + LinkedIn, right-aligned */}
+        <div className="flex flex-1 flex-col items-end gap-6 px-10 pb-10 pt-14 text-right">
           <h2
             className="text-[#f0f2f5]"
             style={{
@@ -90,7 +82,7 @@ export function SocialFooter() {
 
       {/* Bottom bar: copyright only */}
       <div
-        className="relative z-10 mx-auto max-w-5xl border-t px-10 py-4 text-right"
+        className="relative mx-auto max-w-5xl border-t px-10 py-4 text-right"
         style={{ borderColor: "rgba(240,242,245,0.15)" }}
       >
         <p
