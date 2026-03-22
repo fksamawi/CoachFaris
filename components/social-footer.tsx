@@ -1,38 +1,96 @@
-"use client"; // Required for Hooks in Next.js
-
-import { useEffect, useRef, useState } from "react";
-
-// ... (Keep your LinkedInIcon function here)
-
-export function SocialFooter() {
-  const [isVisible, setIsVisible] = useState(false);
-  const footerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target); // Stop observing once it's revealed
-        }
-      },
-      { threshold: 0.1 } // Fires when 10% of the footer is visible
-    );
-
-    if (footerRef.current) {
-      observer.observe(footerRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
+// 1. Define the Icon helper first so the footer can "see" it
+function LinkedInIcon({ className }: { className?: string }) {
   return (
-    <footer
-      ref={footerRef}
-      className={`relative w-full overflow-hidden bg-[#5c7a72] transition-all duration-1000 ease-out 
-        ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
     >
-      {/* ... (The rest of your footer content) */}
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065Zm1.782 13.019H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
+    </svg>
+  );
+}
+
+// 2. Export the main footer
+export function SocialFooter() {
+  return (
+    <footer className="relative w-full overflow-hidden bg-[#5c7a72]">
+      <div className="flex w-full flex-col items-center justify-center gap-8 py-12 md:flex-row md:gap-16">
+        
+        {/* Image Container */}
+        <div className="relative flex shrink-0 justify-center">
+          <img
+            src="/faris-footer.png"
+            alt="Coach Faris"
+            className="relative z-10 block h-[200px] w-auto object-contain md:h-[300px]"
+          />
+          <div
+            className="pointer-events-none absolute bottom-0 left-0 right-0 z-20 h-12"
+            style={{
+              background: "linear-gradient(to top, #5c7a72 10%, transparent 100%)",
+            }}
+          />
+        </div>
+
+        {/* Content Container */}
+        <div className="flex flex-col items-center gap-6 text-center">
+          <h2
+            className="text-[#f0f2f5]"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(2.5rem, 5vw, 4rem)",
+              fontWeight: 300,
+              fontStyle: "italic",
+              lineHeight: 1,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Let&rsquo;s connect.
+          </h2>
+
+          <a
+            href="https://www.linkedin.com/in/fsamawi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 bg-[#a86443] px-8 py-3.5 text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#af765a]"
+            style={{
+              fontFamily: "'Jost', sans-serif",
+              fontSize: "0.8rem",
+              fontWeight: 500,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
+            }}
+            aria-label="Connect on LinkedIn"
+          >
+            <LinkedInIcon className="h-4 w-4" />
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      {/* Copyright Footer */}
+      <div
+        className="w-full py-4 text-center"
+        style={{
+          backgroundColor: "#3e4c47",
+          borderTop: "1px solid rgba(240,242,245,0.05)",
+        }}
+      >
+        <p
+          className="text-[rgba(240,242,245,0.5)]"
+          style={{
+            fontFamily: "'Jost', sans-serif",
+            fontSize: "0.7rem",
+            fontWeight: 300,
+            letterSpacing: "0.1em",
+          }}
+        >
+          &copy; 2026 CoachFaris. All rights reserved.
+        </p>
+      </div>
     </footer>
   );
 }
