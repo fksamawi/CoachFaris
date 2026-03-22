@@ -1,48 +1,35 @@
-function LinkedInIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065Zm1.782 13.019H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
-    </svg>
-  );
-}
-
 export function SocialFooter() {
   return (
     <footer className="relative w-full overflow-hidden bg-[#5c7a72]">
-
-      <div className="flex w-full flex-col items-center md:flex-row md:items-end">
-
-        {/* Image: centered on both */}
-        <div className="relative shrink-0 flex justify-center md:self-end">
+      {/* Container: flex-col for mobile, flex-row for desktop, always centered */}
+      <div className="flex w-full flex-col items-center justify-center gap-8 py-12 md:flex-row md:gap-16">
+        
+        {/* Image Container */}
+        <div className="relative flex shrink-0 justify-center">
           <img
             src="/faris-footer.png"
             alt="Coach Faris"
-            className="block h-[200px] w-auto object-contain object-bottom md:h-[300px]"
+            className="relative z-10 block h-[200px] w-auto object-contain md:h-[300px]"
           />
+          {/* Subtle gradient blend for the bottom of the image */}
           <div
-            className="pointer-events-none absolute bottom-0 left-0 right-0 h-10"
+            className="pointer-events-none absolute bottom-0 left-0 right-0 z-20 h-12"
             style={{
-              background: "linear-gradient(to top, #5c7a72 0%, transparent 100%)",
+              background: "linear-gradient(to top, #5c7a72 10%, transparent 100%)",
             }}
           />
         </div>
 
-        {/* Content: centered on both */}
-        <div className="flex flex-1 flex-col items-center gap-6 px-8 pb-8 pt-4 text-center md:px-12 md:pb-10 md:pt-0">
+        {/* Content Container */}
+        <div className="flex flex-col items-center gap-6 text-center">
           <h2
             className="text-[#f0f2f5]"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(2.2rem, 3.5vw, 3.4rem)",
+              fontSize: "clamp(2.5rem, 5vw, 4rem)",
               fontWeight: 300,
               fontStyle: "italic",
-              lineHeight: 1.05,
+              lineHeight: 1,
               letterSpacing: "-0.02em",
             }}
           >
@@ -53,14 +40,14 @@ export function SocialFooter() {
             href="https://www.linkedin.com/in/fsamawi"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-[#a86443] px-6 py-3 text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#af765a]"
+            className="inline-flex items-center gap-2.5 bg-[#a86443] px-8 py-3.5 text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#af765a]"
             style={{
               fontFamily: "'Jost', sans-serif",
-              fontSize: "0.78rem",
+              fontSize: "0.8rem",
               fontWeight: 500,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              boxShadow: "0 4px 20px rgba(168,100,67,0.3)",
+              boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
             }}
             aria-label="Connect on LinkedIn"
           >
@@ -70,27 +57,26 @@ export function SocialFooter() {
         </div>
       </div>
 
-      {/* Copyright — centered on both */}
+      {/* Copyright Footer */}
       <div
-        className="w-full px-8 py-3 text-center"
+        className="w-full py-4 text-center"
         style={{
           backgroundColor: "#3e4c47",
-          borderTop: "1px solid rgba(240,242,245,0.1)",
+          borderTop: "1px solid rgba(240,242,245,0.05)",
         }}
       >
         <p
-          className="text-[rgba(240,242,245,0.6)]"
+          className="text-[rgba(240,242,245,0.5)]"
           style={{
             fontFamily: "'Jost', sans-serif",
-            fontSize: "0.68rem",
+            fontSize: "0.7rem",
             fontWeight: 300,
-            letterSpacing: "0.08em",
+            letterSpacing: "0.1em",
           }}
         >
           &copy; 2026 CoachFaris. All rights reserved.
         </p>
       </div>
-
     </footer>
   );
 }
