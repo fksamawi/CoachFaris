@@ -16,7 +16,7 @@ export function SocialFooter() {
   return (
     <footer className="relative w-full overflow-hidden bg-[#5c7a72]">
 
-      {/* Top accent line — full width */}
+      {/* Top accent line */}
       <div
         className="h-[3px] w-full"
         style={{
@@ -24,10 +24,10 @@ export function SocialFooter() {
         }}
       />
 
-      {/* Main row — full width with padding */}
-      <div className="flex w-full flex-col items-center gap-8 px-6 py-10 md:flex-row md:items-end md:gap-0 md:px-12 md:py-0">
+      {/* Main row */}
+      <div className="flex w-full flex-col items-center md:flex-row md:items-end">
 
-        {/* Left: Faris image */}
+        {/* Left: Faris — flush to left edge */}
         <div className="relative shrink-0 self-end">
           <img
             src="/faris-footer.png"
@@ -43,7 +43,7 @@ export function SocialFooter() {
         </div>
 
         {/* Right: headline + button */}
-        <div className="flex flex-1 flex-col items-center gap-6 pb-10 text-center md:items-end md:pt-14 md:text-right">
+        <div className="flex flex-1 flex-col items-center gap-6 px-8 pb-8 pt-6 text-center md:items-end md:px-12 md:pb-10 md:pt-0 md:text-right">
           <h2
             className="text-[#f0f2f5]"
             style={{
@@ -79,9 +79,9 @@ export function SocialFooter() {
         </div>
       </div>
 
-      {/* Copyright bar — full width, darker teal */}
+      {/* Copyright bar — darker teal, full width, no extra padding */}
       <div
-        className="w-full px-6 py-4 text-center md:px-12 md:text-right"
+        className="w-full px-8 py-3 text-center md:px-12 md:text-right"
         style={{
           backgroundColor: "#3e4c47",
           borderTop: "1px solid rgba(240,242,245,0.1)",
