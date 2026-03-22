@@ -16,16 +16,14 @@ export function SocialFooter() {
   return (
     <footer className="relative w-full overflow-hidden bg-[#5c7a72]">
 
-
-      {/* Main row */}
       <div className="flex w-full flex-col items-center md:flex-row md:items-end">
 
-        {/* Left: Faris — flush to left edge */}
-        <div className="relative shrink-0 self-end">
+        {/* Image: centered on both */}
+        <div className="relative shrink-0 flex justify-center md:self-end">
           <img
             src="/faris-footer.png"
             alt="Coach Faris"
-            className="block h-[260px] w-auto object-contain object-bottom md:h-[300px]"
+            className="block h-[200px] w-auto object-contain object-bottom md:h-[300px]"
           />
           <div
             className="pointer-events-none absolute bottom-0 left-0 right-0 h-10"
@@ -35,8 +33,8 @@ export function SocialFooter() {
           />
         </div>
 
-        {/* Right: headline + button */}
-        <div className="flex flex-1 flex-col items-center gap-6 px-8 pb-8 pt-6 text-center md:items-end md:px-12 md:pb-10 md:pt-0 md:text-right">
+        {/* Content: centered on both */}
+        <div className="flex flex-1 flex-col items-center gap-6 px-8 pb-8 pt-4 text-center md:px-12 md:pb-10 md:pt-0">
           <h2
             className="text-[#f0f2f5]"
             style={{
@@ -72,9 +70,9 @@ export function SocialFooter() {
         </div>
       </div>
 
-      {/* Copyright bar — darker teal, full width, no extra padding */}
+      {/* Copyright — centered on both */}
       <div
-        className="w-full px-8 py-3 text-center md:px-12 md:text-right"
+        className="w-full px-8 py-3 text-center"
         style={{
           backgroundColor: "#3e4c47",
           borderTop: "1px solid rgba(240,242,245,0.1)",
