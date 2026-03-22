@@ -25,7 +25,7 @@ export const SocialFooter = () => {
               Let's Connect
             </span>
             <a 
-              href="https://www.linkedin.com/in/faris-khalifeh/" 
+              href="https://www.linkedin.com/in/fsamawi/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="transition-transform hover:scale-110"
