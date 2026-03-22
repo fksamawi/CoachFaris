@@ -47,7 +47,7 @@ export const SocialFooter = () => {
           {/* Copyright Row */}
           <div className="pt-4 border-t border-gray-200 w-full text-center md:text-right">
             <p className="text-sm text-gray-600 whitespace-nowrap">
-              © {currentYear} Coach Faris. All rights reserved.
+              © {currentYear} CoachFaris. All rights reserved.
             </p>
           </div>
         </div>
