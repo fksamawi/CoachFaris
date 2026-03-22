@@ -14,9 +14,9 @@ function LinkedInIcon({ className }: { className?: string }) {
 
 export function SocialFooter() {
   return (
-    <footer className="relative overflow-hidden bg-[#5c7a72]">
+    <footer className="relative w-full overflow-hidden bg-[#5c7a72]">
 
-      {/* Top accent line */}
+      {/* Top accent line — full width */}
       <div
         className="h-[3px] w-full"
         style={{
@@ -24,8 +24,8 @@ export function SocialFooter() {
         }}
       />
 
-      {/* Main row */}
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 px-6 py-10 md:flex-row md:items-end md:gap-0 md:px-0 md:py-0">
+      {/* Main row — full width with padding */}
+      <div className="flex w-full flex-col items-center gap-8 px-6 py-10 md:flex-row md:items-end md:gap-0 md:px-12 md:py-0">
 
         {/* Left: Faris image */}
         <div className="relative shrink-0 self-end">
@@ -43,7 +43,7 @@ export function SocialFooter() {
         </div>
 
         {/* Right: headline + button */}
-        <div className="flex flex-1 flex-col items-center gap-6 pb-10 text-center md:items-end md:px-10 md:pt-14 md:text-right">
+        <div className="flex flex-1 flex-col items-center gap-6 pb-10 text-center md:items-end md:pt-14 md:text-right">
           <h2
             className="text-[#f0f2f5]"
             style={{
@@ -79,13 +79,16 @@ export function SocialFooter() {
         </div>
       </div>
 
-      {/* Bottom bar: copyright only */}
+      {/* Copyright bar — full width, darker teal */}
       <div
-        className="relative mx-auto max-w-5xl border-t px-6 py-4 text-center md:px-10 md:text-right"
-        style={{ borderColor: "rgba(240,242,245,0.15)" }}
+        className="w-full px-6 py-4 text-center md:px-12 md:text-right"
+        style={{
+          backgroundColor: "#3e4c47",
+          borderTop: "1px solid rgba(240,242,245,0.1)",
+        }}
       >
         <p
-          className="text-[rgba(240,242,245,0.55)]"
+          className="text-[rgba(240,242,245,0.6)]"
           style={{
             fontFamily: "'Jost', sans-serif",
             fontSize: "0.68rem",
