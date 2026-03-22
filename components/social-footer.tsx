@@ -12,15 +12,15 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-export function Footer() {
+export function SocialFooter() {
   return (
     <footer className="relative overflow-hidden bg-[#5c7a72]">
+
       {/* Top accent line */}
       <div
         className="h-[3px] w-full"
         style={{
-          background:
-            "linear-gradient(90deg, #2f3c36 0%, #a86443 30%, transparent 75%)",
+          background: "linear-gradient(90deg, #2f3c36 0%, #a86443 30%, transparent 75%)",
         }}
       />
 
@@ -28,19 +28,19 @@ export function Footer() {
       <div
         className="pointer-events-none absolute inset-0 z-0"
         style={{
-          background:
-            "linear-gradient(105deg, rgba(35,47,42,0.5) 0%, transparent 50%)",
+          background: "linear-gradient(105deg, rgba(35,47,42,0.5) 0%, transparent 50%)",
         }}
       />
 
       {/* Main row */}
       <div className="relative z-10 mx-auto flex max-w-5xl items-end">
+
         {/* Left: photo */}
         <div className="relative shrink-0 pl-10">
           <img
             src="/faris-footer.png"
             alt="Coach Faris"
-            className="block h-[280px] w-auto object-contain object-bottom brightness-95 contrast-[1.02] drop-shadow-xl"
+            className="block h-[280px] w-auto object-contain object-bottom brightness-95 drop-shadow-xl"
           />
           {/* Fade feet into footer */}
           <div
@@ -51,5 +51,61 @@ export function Footer() {
           />
         </div>
 
-        {/* Right: content \u2014 right-aligned */}
-        <div className="flex flex-1 flex-col items-end gap-5 px-12 pb-10 pt-14 text
+        {/* Right: content */}
+        <div className="flex flex-1 flex-col items-end gap-5 px-12 pb-10 pt-14 text-right">
+          <h2
+            className="text-[#f0f2f5]"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(2.2rem, 3.5vw, 3.4rem)",
+              fontWeight: 300,
+              fontStyle: "italic",
+              lineHeight: 1.05,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Let&rsquo;s connect.
+          </h2>
+
+          <a
+            href="https://www.linkedin.com/in/fsamawi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 bg-[#a86443] px-6 py-3 text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#af765a]"
+            style={{
+              fontFamily: "'Jost', sans-serif",
+              fontSize: "0.78rem",
+              fontWeight: 500,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              boxShadow: "0 4px 20px rgba(168,100,67,0.3)",
+            }}
+            aria-label="Connect on LinkedIn"
+          >
+            <LinkedInIcon className="h-4 w-4" />
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      {/* Bottom bar: copyright only */}
+      <div
+        className="relative z-10 mx-auto max-w-5xl border-t px-10 py-4 text-right"
+        style={{ borderColor: "rgba(240,242,245,0.15)" }}
+      >
+        <p
+          className="text-[rgba(240,242,245,0.55)]"
+          style={{
+            fontFamily: "'Jost', sans-serif",
+            fontSize: "0.68rem",
+            fontWeight: 300,
+            letterSpacing: "0.08em",
+          }}
+        >
+          &copy; 2026 CoachFaris. All rights reserved.
+        </p>
+      </div>
+
+    </footer>
+  );
+}
