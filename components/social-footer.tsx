@@ -16,13 +16,6 @@ export function SocialFooter() {
   return (
     <footer className="relative w-full overflow-hidden bg-[#5c7a72]">
 
-      {/* Top accent line */}
-      <div
-        className="h-[3px] w-full"
-        style={{
-          background: "linear-gradient(90deg, #2f3c36 0%, #a86443 30%, transparent 75%)",
-        }}
-      />
 
       {/* Main row */}
       <div className="flex w-full flex-col items-center md:flex-row md:items-end">
