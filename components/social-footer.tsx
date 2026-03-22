@@ -37,18 +37,20 @@ export function SocialFooter() {
         {/* Content Container */}
         <div className="flex flex-col items-center gap-6 text-center">
          <h4
-            className="text-[#f0f2f5]"
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(2.5rem, 5vw, 4rem)",
-              fontWeight: 300,
-              fontStyle: "italic",
-              lineHeight: 1,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Connect. Commit. Create.
-          </h4>
+  className="text-[#f0f2f5]"
+  style={{
+    fontFamily: "'Cormorant Garamond', serif",
+    // Reduced from clamp(2.5rem, 5vw, 4rem) to a more subtle range
+    fontSize: "clamp(1.5rem, 3vw, 2.2rem)", 
+    fontWeight: 400, // Slightly more weight looks better at smaller sizes
+    fontStyle: "italic",
+    lineHeight: 1.2,
+    letterSpacing: "0.02em", // Opened up the tracking slightly for readability
+  }}
+>
+  Connect. Commit. Create.
+</h4>
+
           <a
             href="https://www.linkedin.com/in/fsamawi"
             target="_blank"
