@@ -11,12 +11,12 @@ export function HeroSection() {
         </div>
 
         {/* Headline */}
-        <h1 className="mb-6 text-4xl font-bold text-[#3E5F44] sm:text-5xl">
+        <h1 className="mb-6 text-balance text-4xl font-medium text-[#3E5F44] sm:text-5xl">
           Strategic clarity for leaders at a crossroads
         </h1>
 
         {/* Description */}
-        <p className="mb-8 text-lg text-[#272727]">
+        <p className="mb-8 text-base leading-relaxed text-[#272727] opacity-85">
           I work with thoughtful leaders navigating transitions in career, direction, or identity — to move forward with intention.
         </p>
 
