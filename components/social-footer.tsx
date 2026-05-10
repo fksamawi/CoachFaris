@@ -45,8 +45,7 @@ export function SocialFooter() {
               width={22}
               height={22}
               style={{
-                filter:
-                  "invert(1) brightness(0.9) drop-shadow(0 0 4px rgba(255,255,255,0.25))",
+                filter: "invert(1) brightness(1.1)", // brighter, no opacity
               }}
             />
           </a>
@@ -65,8 +64,7 @@ export function SocialFooter() {
               width={22}
               height={22}
               style={{
-                filter:
-                  "invert(1) brightness(0.9) drop-shadow(0 0 4px rgba(255,255,255,0.25))",
+                filter: "invert(1) brightness(1.1)", // brighter, no opacity
               }}
             />
           </a>
@@ -85,8 +83,7 @@ export function SocialFooter() {
               width={22}
               height={22}
               style={{
-                filter:
-                  "invert(1) brightness(0.9) drop-shadow(0 0 4px rgba(255,255,255,0.25))",
+                filter: "invert(1) brightness(1.1)", // brighter, no opacity
               }}
             />
           </a>
