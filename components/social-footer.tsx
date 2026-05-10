@@ -37,14 +37,17 @@ export function SocialFooter() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="opacity-75 transition-opacity duration-200 hover:opacity-100"
+            className="transition-opacity duration-200 hover:opacity-100"
           >
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Copilot_20260509_214727-ePTfwi5c8lrI6t9dQfG8dYdyzmjbWu.png"
               alt="LinkedIn"
               width={22}
               height={22}
-              style={{ filter: "invert(1) brightness(0.85)" }}
+              style={{
+                filter:
+                  "invert(1) brightness(0.9) drop-shadow(0 0 4px rgba(255,255,255,0.25))",
+              }}
             />
           </a>
 
@@ -54,14 +57,17 @@ export function SocialFooter() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="opacity-75 transition-opacity duration-200 hover:opacity-100"
+            className="transition-opacity duration-200 hover:opacity-100"
           >
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Copilot_20260509_214724-4XMi7GcuUJYsvJp73zpkey3EHuT7yK.png"
               alt="Instagram"
               width={22}
               height={22}
-              style={{ filter: "invert(1) brightness(0.85)" }}
+              style={{
+                filter:
+                  "invert(1) brightness(0.9) drop-shadow(0 0 4px rgba(255,255,255,0.25))",
+              }}
             />
           </a>
 
@@ -71,14 +77,17 @@ export function SocialFooter() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Threads"
-            className="opacity-75 transition-opacity duration-200 hover:opacity-100"
+            className="transition-opacity duration-200 hover:opacity-100"
           >
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Copilot_20260509_214720-vBDhGYzY54f4KlftHTqTWQl6kIGinA.png"
               alt="Threads"
               width={22}
               height={22}
-              style={{ filter: "invert(1) brightness(0.85)" }}
+              style={{
+                filter:
+                  "invert(1) brightness(0.9) drop-shadow(0 0 4px rgba(255,255,255,0.25))",
+              }}
             />
           </a>
         </div>
