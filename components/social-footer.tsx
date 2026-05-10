@@ -11,7 +11,7 @@ export function SocialFooter() {
               fontFamily: "'Jost', sans-serif",
               fontSize: "0.875rem",
               fontWeight: 500,
-              color: "#DDD6B9",
+              color: "#DDD6B9", // Sand Dune for clear legibility
               marginBottom: "4px",
             }}
           >
@@ -22,7 +22,7 @@ export function SocialFooter() {
               fontFamily: "'Jost', sans-serif",
               fontSize: "0.688rem",
               fontWeight: 300,
-              color: "rgba(221,214,185,0.4)",
+              color: "rgba(221,214,185,0.4)", // Low opacity Sand Dune for subtle secondary text
               letterSpacing: "0.06em",
             }}
           >
@@ -31,64 +31,49 @@ export function SocialFooter() {
         </div>
 
         {/* Right: social icons */}
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-6">
           
-          {/* LinkedIn */}
+          {/* LinkedIn - Outline Style */}
           <a
             href="https://www.linkedin.com/in/fsamawi/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="transition-opacity duration-200 hover:opacity-100"
+            className="opacity-70 transition-opacity duration-200 hover:opacity-100"
           >
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="#DDD6B9"
-            >
-              <rect x="2" y="2" width="20" height="20" rx="4" />
-              <rect x="6.5" y="10" width="2.5" height="8" />
-              <circle cx="7.75" cy="7" r="1.25" />
-              <path d="M12 10h2.3v1.1c.3-.6 1.1-1.3 2.4-1.3 2.5 0 3.3 1.6 3.3 3.8V18h-2.5v-3.7c0-1-.2-2-1.5-2-1.3 0-1.7 1-1.7 2V18H12v-8z" />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#DDD6B9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
             </svg>
           </a>
 
-          {/* Instagram */}
+          {/* Instagram - Outline Style */}
           <a
             href="https://www.instagram.com/faris.samawi"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="transition-opacity duration-200 hover:opacity-100"
+            className="opacity-70 transition-opacity duration-200 hover:opacity-100"
           >
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="#DDD6B9"
-            >
-              <rect x="2" y="2" width="20" height="20" rx="5" />
-              <circle cx="12" cy="12" r="5" />
-              <circle cx="17" cy="7" r="1.2" />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#DDD6B9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
             </svg>
           </a>
 
-          {/* Threads */}
+          {/* Threads - Minimalist Path */}
           <a
-            href="https://www.threads.com/@faris.samawi"
+            href="https://www.threads.net/@faris.samawi"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Threads"
-            className="transition-opacity duration-200 hover:opacity-100"
+            className="opacity-70 transition-opacity duration-200 hover:opacity-100"
           >
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="#DDD6B9"
-            >
-              <path d="M12 2C7 2 3 6 3 11c0 2 .6 3.8 1.6 5.3L3 22h4l1.2-4.8c1.2.5 2.5.8 3.8.8 5 0 9-4 9-9s-4-9-9-9zm0 14c-3 0-5-2.5-5-5s2-5 5-5 5 2.5 5 5-2 5-5 5z" />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#DDD6B9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M19.25 10c0-4.5-3-7.25-7.25-7.25S4.75 5.5 4.75 10c0 1.75.5 3.5 1.5 4.75C8 17 10 18.25 12 18.25c1.25 0 2.5-.25 3.5-.75l.5-.25c.75-.5 1.25-1.25 1.5-2 .5-1.25.5-2.75-.25-4a2.75 2.75 0 0 0-4.5 0 2.5 2.5 0 0 0 0 3c.5.75 1.25 1 2 1s1.25-.25 1.75-.75" />
+              <path d="M12 15.25c-2.5 0-4-1.5-4-3.5s1.5-3.5 4-3.5 4 1.5 4 3.5-1.5 3.5-4 3.5z" />
             </svg>
           </a>
 
