@@ -1,96 +1,87 @@
-// 1. Define the Icon helper first so the footer can "see" it
-function LinkedInIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065Zm1.782 13.019H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
-    </svg>
-  );
-}
-
-// 2. Export the main footer
 export function SocialFooter() {
   return (
-    <footer className="relative w-full overflow-hidden bg-[#5c7a72]">
-      <div className="flex w-full flex-col items-center justify-center gap-8 py-12 md:flex-row md:gap-16">
-        
-        {/* Image Container */}
-        <div className="relative flex shrink-0 justify-center">
-          <img
-            src="/faris-footer.png"
-            alt="Coach Faris"
-            className="relative z-10 block h-[200px] w-auto object-contain md:h-[300px]"
-          />
-          <div
-            className="pointer-events-none absolute bottom-0 left-0 right-0 z-20 h-12"
-            style={{
-              background: "linear-gradient(to top, #5c7a72 10%, transparent 100%)",
-            }}
-          />
-        </div>
-
-        {/* Content Container */}
-        <div className="flex flex-col items-center gap-6 text-center">
-         <h4
-  className="text-[#f0f2f5]"
-  style={{
-    fontFamily: "'Cormorant Garamond', serif",
-    // Reduced from clamp(2.5rem, 5vw, 4rem) to a more subtle range
-    fontSize: "clamp(1.5rem, 3vw, 2.2rem)", 
-    fontWeight: 400, // Slightly more weight looks better at smaller sizes
-    fontStyle: "italic",
-    lineHeight: 1.2,
-    letterSpacing: "0.02em", // Opened up the tracking slightly for readability
-  }}
->
-  Connect. Commit. Create.
-</h4>
-
-          <a
-            href="https://www.linkedin.com/in/fsamawi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-[#a86443] px-8 py-3.5 text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#af765a]"
+    <footer style={{ backgroundColor: "#272727" }}>
+      {/* Main footer row */}
+      <div className="flex flex-col items-center justify-between gap-6 px-9 py-7 sm:flex-row">
+        {/* Left: tagline + copyright */}
+        <div className="text-center sm:text-left">
+          <p
             style={{
               fontFamily: "'Jost', sans-serif",
-              fontSize: "0.8rem",
+              fontSize: "0.875rem",
               fontWeight: 500,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
+              color: "#DDD6B9",
+              marginBottom: "4px",
             }}
-            aria-label="Connect on LinkedIn"
           >
-            <LinkedInIcon className="h-4 w-4" />
-            LinkedIn
+            Connect. Commit. Create.
+          </p>
+          <span
+            style={{
+              fontFamily: "'Jost', sans-serif",
+              fontSize: "0.688rem",
+              fontWeight: 300,
+              color: "rgba(221,214,185,0.4)",
+              letterSpacing: "0.06em",
+            }}
+          >
+            &copy; 2026 CoachFaris. All rights reserved.
+          </span>
+        </div>
+
+        {/* Right: social icons */}
+        <div className="flex items-center gap-5">
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/fsamawi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="opacity-75 transition-opacity duration-200 hover:opacity-100"
+          >
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Copilot_20260509_214727-ePTfwi5c8lrI6t9dQfG8dYdyzmjbWu.png"
+              alt="LinkedIn"
+              width={22}
+              height={22}
+              style={{ filter: "invert(1) brightness(0.85)" }}
+            />
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/faris.samawi"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="opacity-75 transition-opacity duration-200 hover:opacity-100"
+          >
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Copilot_20260509_214724-4XMi7GcuUJYsvJp73zpkey3EHuT7yK.png"
+              alt="Instagram"
+              width={22}
+              height={22}
+              style={{ filter: "invert(1) brightness(0.85)" }}
+            />
+          </a>
+
+          {/* Threads */}
+          <a
+            href="https://www.threads.com/@faris.samawi"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Threads"
+            className="opacity-75 transition-opacity duration-200 hover:opacity-100"
+          >
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Copilot_20260509_214720-vBDhGYzY54f4KlftHTqTWQl6kIGinA.png"
+              alt="Threads"
+              width={22}
+              height={22}
+              style={{ filter: "invert(1) brightness(0.85)" }}
+            />
           </a>
         </div>
-      </div>
-
-      {/* Copyright Footer */}
-      <div
-        className="w-full py-4 text-center"
-        style={{
-          backgroundColor: "#3e4c47",
-          borderTop: "1px solid rgba(240,242,245,0.05)",
-        }}
-      >
-        <p
-          className="text-[rgba(240,242,245,0.5)]"
-          style={{
-            fontFamily: "'Jost', sans-serif",
-            fontSize: "0.7rem",
-            fontWeight: 300,
-            letterSpacing: "0.1em",
-          }}
-        >
-          &copy; 2026 CoachFaris. All rights reserved.
-        </p>
       </div>
     </footer>
   );
