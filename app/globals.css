@@ -4,42 +4,39 @@
 
 @layer base {
   :root {
-    /* CoachFaris Palette */
-    --charcoal-brown: #2f3c36;
-    --deep-teal: #6a8a81;
-    --deep-teal-2: #5c7a72;
-    --alice-blue: #f0f2f5;
-    --dark-slate-grey: #3e4c47;
-    --dusty-taupe: #af765a;
-    --toffee-brown: #a86443;
-    --jet-black: #232f2a;
-    --pale-sky: #d6dde1;
-    --dark-khaki: #5e4c31;
+    /* CoachFaris Brand Palette */
+    --primary: #3E5F44;           /* Hunter Green - Logo, headlines, CTAs, nav links */
+    --accent: #D4AA7D;            /* Sandy Clay - Cards, highlights, hover states, dividers */
+    --background: #DDD6B9;        /* Sand Dune - Page canvas, section backgrounds */
+    --surface: #F5F2EA;           /* Sand Dune Light - Cards on Sand Dune bg, white-alt panels */
+    --foreground: #272727;        /* Shadow Grey - Body copy, paragraph text, secondary labels */
+    --footer: #272727;            /* Shadow Grey - Footer backgrounds, dark overlays */
+    
+    /* Supporting Neutrals */
+    --charcoal-brown: #2f3c36;    /* Alt dark text, subheadings */
+    --deep-teal: #5c7a72;         /* Links, hover on primary */
+    --dusty-taupe: #af765a;       /* Warm accent, borders */
+    --toffee-brown: #a86443;      /* Callouts, pull quotes */
+    --pale-sky: #d6dde1;          /* Alt bg, cool-toned sections */
 
     /* Shadcn/UI Mappings */
-    --background: 210 20% 96%;        /* alice-blue #f0f2f5 */
-    --foreground: 158 13% 21%;        /* charcoal-brown #2f3c36 */
-    --muted: 198 15% 86%;             /* pale-sky #d6dde1 */
-    --muted-foreground: 158 10% 27%;  /* dark-slate-grey #3e4c47 */
-    --border: 163 13% 48%;            /* deep-teal #6a8a81 */
-    --primary: 20 35% 52%;            /* dusty-taupe #af765a */
-    --primary-foreground: 210 20% 96%; /* alice-blue #f0f2f5 */
-    --card: 210 20% 96%;              /* alice-blue */
-    --card-foreground: 158 13% 21%;   /* charcoal-brown */
-    --accent: 164 14% 42%;            /* deep-teal-2 #5c7a72 */
-    --accent-foreground: 210 20% 96%; /* alice-blue */
-    --ring: 163 13% 48%;              /* deep-teal */
+    --card: #F5F2EA;              /* Sand Dune Light */
+    --card-foreground: #272727;   /* Shadow Grey */
+    --muted: #d6dde1;             /* Pale Sky */
+    --muted-foreground: #5c7a72;  /* Deep Teal */
+    --border: #D4AA7D;            /* Sandy Clay */
+    --ring: #3E5F44;              /* Hunter Green */
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 155 15% 16%;        /* jet-black #232f2a */
-    --foreground: 210 20% 96%;        /* alice-blue */
-    --muted: 158 10% 27%;             /* dark-slate-grey */
-    --muted-foreground: 198 15% 86%;  /* pale-sky */
-    --border: 163 13% 48%;            /* deep-teal */
-    --primary: 20 35% 52%;            /* dusty-taupe */
-    --primary-foreground: 210 20% 96%;
+    --primary: #3E5F44;
+    --accent: #D4AA7D;
+    --background: #272727;
+    --surface: #2f3c36;
+    --foreground: #DDD6B9;
+    --footer: #272727;
+    --border: #5c7a72;
   }
 }
 
