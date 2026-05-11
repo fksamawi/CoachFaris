@@ -117,8 +117,8 @@ export default function AccordionSection({
                   fontFamily: "var(--font-body)",
                   cursor: "pointer",
                   border: isDark
-                    ? `1.5px solid ${isActive ? "var(--sandy-clay)" : "rgba(212,170,125,0.5)"}`
-                    : `1.5px solid ${isActive ? "var(--teal)" : "var(--teal-border)"}`,
+                    ? `1.5px solid ${isActive ? "var(--sandy-clay)" : "rgba(212,170,125,0.4)"}`
+                    : `1.5px solid ${isActive ? "var(--teal)" : "rgba(92,122,114,0.4)"}`,
                   background: isDark
                     ? isActive ? "var(--sandy-clay)" : "transparent"
                     : isActive ? "var(--teal)" : "transparent",
@@ -126,12 +126,6 @@ export default function AccordionSection({
                     ? isActive ? "var(--shadow-grey)" : "var(--sandy-clay)"
                     : isActive ? "#fff" : "var(--teal)",
                   transition: "all 0.15s ease",
-                  // Underline on active tab
-                  borderBottom: isActive
-                    ? isDark
-                      ? "2.5px solid var(--sandy-clay)"
-                      : "2.5px solid var(--teal)"
-                    : undefined,
                 }}
               >
                 {tab.label}
