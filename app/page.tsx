@@ -289,8 +289,8 @@ function Footer() {
         gap: "1rem",
       }}
     >
-      {/* Left — social icons */}
-      <div style={{ display: "flex", gap: "1.25rem", alignItems: "center" }}>
+      {/* Center — social icons */}
+      <div style={{ display: "flex", gap: "1.5rem", alignItems: "center", justifyContent: "center", width: "100%" }}>
         <a
           href="https://www.linkedin.com/in/fsamawi"
           target="_blank"
@@ -326,8 +326,8 @@ function Footer() {
         </a>
       </div>
 
-      {/* Right — tagline + copyright */}
-      <div style={{ textAlign: "right" }}>
+      {/* Center — tagline + copyright */}
+      <div style={{ textAlign: "center", width: "100%" }}>
         <p
           style={{
             fontFamily: "var(--font-display)",
