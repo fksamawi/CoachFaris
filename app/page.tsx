@@ -105,8 +105,18 @@ function Nav({ onNavClick }: { onNavClick: (section: string) => void }) {
           ))}
         </div>
 
-        {/* Right side: hamburger only */}
-        <div style={{ display: "flex", alignItems: "center" }}>
+        {/* Right side: CTA + hamburger */}
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+          <a
+            href="https://calendar.app.google/82cuX3WRaRWwDAdu6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-cta"
+            style={{ fontSize: "0.8125rem", padding: "0.5rem 1.25rem" }}
+          >
+            Book a Clarity Session
+          </a>
+
           {/* Hamburger — mobile only */}
           <button
             className="nav-hamburger"
@@ -161,9 +171,9 @@ function Nav({ onNavClick }: { onNavClick: (section: string) => void }) {
               {l.label}
             </button>
           ))}
-          {/* CTA in mobile menu */}
+          {/* CTA in mobile menu too */}
           <a
-            href="https://clarity.coachfaris.com"
+            href="https://calendar.app.google/82cuX3WRaRWwDAdu6"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-cta"
@@ -246,7 +256,7 @@ function Hero() {
       </p>
 
       <a
-        href="https://clarity.coachfaris.com"
+        href="https://calendar.app.google/82cuX3WRaRWwDAdu6"
         target="_blank"
         rel="noopener noreferrer"
         className="btn-cta"
@@ -271,18 +281,18 @@ function Footer() {
     <footer
       style={{
         background: "var(--shadow-grey)",
-        padding: "2rem var(--section-px)",
+        padding: "1.75rem var(--section-px)",
         display: "flex",
-        flexDirection: "column",
+        justifyContent: "space-between",
         alignItems: "center",
+        flexWrap: "wrap",
         gap: "1rem",
-        textAlign: "center",
       }}
     >
-      {/* Social icons — centered */}
-      <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+      {/* Left — social icons */}
+      <div style={{ display: "flex", gap: "1.25rem", alignItems: "center" }}>
         <a
-          href="https://www.linkedin.com/in/fsamawi/"
+          href="https://www.linkedin.com/in/fsamawi"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
@@ -304,7 +314,7 @@ function Footer() {
           <InstagramIcon />
         </a>
         <a
-          href="https://www.threads.com/@faris.samawi"
+          href="https://www.threads.net/@faris.samawi"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Threads"
@@ -316,15 +326,15 @@ function Footer() {
         </a>
       </div>
 
-      {/* Tagline + copyright — centered */}
-      <div>
+      {/* Right — tagline + copyright */}
+      <div style={{ textAlign: "right" }}>
         <p
           style={{
             fontFamily: "var(--font-display)",
             fontSize: "0.9375rem",
             fontWeight: 500,
             color: "var(--sand-dune)",
-            marginBottom: "0.25rem",
+            marginBottom: "0.2rem",
           }}
         >
           Connect. Commit. Create.
@@ -552,7 +562,7 @@ export default function Home() {
             where you are now and what&apos;s at stake. No obligation.
           </p>
           <a
-            href="https://clarity.coachfaris.com"
+            href="https://calendar.app.google/82cuX3WRaRWwDAdu6"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-cta"
