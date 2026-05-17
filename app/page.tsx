@@ -8,28 +8,28 @@ const BOOKING_URL = "https://clarity.coachfaris.com";
 
 const FALLBACK = {
   site: {
-    heroHeadline: "Strategic clarity for leaders at a crossroads",
+    heroHeadline: "Become the leader your next chapter needs you to be.",
     heroSubtext:
-      "I work with thoughtful leaders and professionals navigating transitions in their career, direction, or identity — to move forward with intention.",
-    footerTagline: "Connect. Commit. Create.",
+      "I work with leaders who sense they've outgrown their current way of leading — and want to close the gap between who they are becoming and how they show up.",
+    footerTagline: "From Restless to Relentless",
   },
   clients: {
-    whoHeading: 'The "unicorn leader"',
+    whoHeading: "You've always been hard to put in a box.",
     whoBody:
-      "High performers who have never fit neatly into one box — and are tired of twisting themselves to match titles.",
+      "Most leadership struggles are not about capability. They are about misalignment between who a leader is and the context they are leading in. I work with leaders in this space, helping them reduce that internal friction so they can lead in a way that fits who they are becoming.",
     whoList: [
-      "Stepping into your first executive or regional role",
-      "Questioning whether to double down or pivot",
-      "Wrestling with identity outside your job title",
-      "Sensing that something important has shifted — inside you, or around you",
+      "Stepping into a bigger role and finding your previous way of leading no longer works",
+      "Having evolved internally and outgrown how you're expected to show up",
+      "Never fully fitting the dominant leadership style around you — and tired of adapting yourself to meet it",
     ],
     whatList: [
-      "Making a clear, grounded decision about a next role",
       "Redefining success so it aligns with your actual values",
       "Building the operating model that fits who you actually are",
+      "Designing an internal architecture that fits the context you are currently operating in",
+      "Redesigning how you lead so it matches who you are becoming",
     ],
     approachBody:
-      "Every engagement starts with deep listening and honest conversation — not a pre-packaged programme. I'm direct but not harsh, pragmatic but not cynical. We focus on the few decisive moves that move the needle.",
+      "I'm direct but not harsh. Pragmatic but not prescriptive. Every engagement starts with honest conversation, not a packaged programme. I bring in frameworks and theories where it makes sense. Together, we focus on the few moves that actually move the needle.",
   },
   coaching: {
     whatBody:
@@ -45,21 +45,14 @@ const FALLBACK = {
   },
   me: {
     bioBody:
-      "With over 15 years of experience across Europe and the Middle East, I've worked across the HR value chain and executive development. I bring a mix of strategic thinking, psychological insight, and regional nuance to every engagement.",
-    testimonials: [
-      {
-        quote:
-          "Working with Faris gave me the clarity I needed to make a decision I'd been avoiding for two years.",
-        author: "Regional Director, Financial Services",
-      },
-      {
-        quote:
-          "Direct, thoughtful, and genuinely invested in getting it right — not just getting through the session.",
-        author: "Chief People Officer, Technology",
-      },
+      "I've spent 15+ years working across HR, executive development, and organisational strategy in Europe and the Middle East. I understand how leadership actually operates inside organisations — the pressures, the politics, the identity questions that rarely get named. I bring strategic thinking, psychological depth, and regional context to every engagement.",
+    clientOrgs: [
+      "PwC Middle East",
+      "Company A",
+      "Company B",
     ],
     gettingStartedBody:
-      "We begin with a 30-minute Clarity Session — a focused conversation on where you are now and what's at stake. No obligation.",
+      "We begin with a 30-minute Clarity Session: a focused conversation on where you are now and what's at stake. No obligation.",
   },
 };
 
@@ -135,7 +128,6 @@ function StructuredData() {
 // ── Page (server component — fetches from Sanity) ────────────────────────────
 
 export default async function Home() {
-  // Fetch all content in parallel; fall back to hardcoded if Sanity returns null
   const [rawSite, rawClients, rawCoaching, rawMe] = await Promise.all([
     getSiteContent().catch(() => null),
     getAboutClients().catch(() => null),
