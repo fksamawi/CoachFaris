@@ -131,20 +131,24 @@ export default function PageClient({ site, clients, coaching, me, bookingUrl, Li
         </ContentBlock>
       ),
     },
-    {
-      id: "start", label: "Getting started",
-      content: (
-        <ContentBlock heading="Ready to begin?" variant="dark">
-          <p style={{ marginBottom: "1.25rem" }}>{me.gettingStartedBody}</p>  
-          <!-- Google Calendar Appointment Scheduling begin -->
-          <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1KeYykJKpY-yKppYqPhWJRZyCuFgMJdFfOkFRlaWBocgLZAxzhkf6hDEmlhLlCOsxNm8cuqX6j?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
-          <!-- end Google Calendar Appointment Scheduling -->
-          <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-cta">
-            Book a Clarity Session
-          </a>
-        </ContentBlock>
-      ),
-    },
+{
+  id: "start", label: "Getting started",
+  content: (
+    <ContentBlock heading="Ready to begin?" variant="dark">
+      <p style={{ marginBottom: "1.25rem" }}>{me.gettingStartedBody}</p>
+      <iframe
+        src="https://calendar.google.com/calendar/appointments/AcZssZ2sL9t26sOHqU5HqZiCl6LZWFtbXQTAcx9axS0=?gv=true"
+        style={{ border: 0, display: "block", marginBottom: "1.25rem" }}
+        width="100%"
+        height="600"
+        frameBorder={0}
+      />
+      <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-cta">
+        Book a Clarity Session
+      </a>
+    </ContentBlock>
+  ),
+},
   ];
 
   // ── Render ─────────────────────────────────────────────────────────────────
