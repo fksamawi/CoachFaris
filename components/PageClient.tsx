@@ -118,19 +118,23 @@ export default function PageClient({ site, clients, coaching, me, bookingUrl, Li
         </ContentBlock>
       ),
     },
-    {
-      id: "experience", label: "Experience",
-      content: (
-        <ContentBlock heading="What clients say" variant="dark">
-          {me.testimonials.map((t, i) => (
-            <blockquote key={i} style={{ borderLeft: "2px solid var(--sandy-clay)", paddingLeft: "1rem", marginBottom: i < me.testimonials.length - 1 ? "1rem" : 0, fontStyle: "italic", fontSize: "0.875rem", color: "var(--sand-dune)", opacity: 0.9 }}>
-              <p>&ldquo;{t.quote}&rdquo;</p>
-              <cite style={{ display: "block", marginTop: "0.4rem", fontStyle: "normal", fontSize: "0.75rem", color: "var(--sandy-clay)" }}>— {t.author}</cite>
-            </blockquote>
-          ))}
-        </ContentBlock>
-      ),
-    },
+{
+  id: "experience", label: "Experience",
+  content: (
+    <ContentBlock heading="Leaders I've worked with" variant="dark">
+      <p style={{ fontSize: "0.875rem", color: "var(--sand-dune)", opacity: 0.7, marginBottom: "1.25rem" }}>
+        I've worked with leaders from organisations including:
+      </p>
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+        {me.clientOrgs.map((org, i) => (
+          <span key={i} style={{ fontSize: "0.9375rem", color: "var(--sand-dune)", fontFamily: "var(--font-display)", fontWeight: 500 }}>
+            {org}
+          </span>
+        ))}
+      </div>
+    </ContentBlock>
+  ),
+},
 {
   id: "start", label: "Getting started",
   content: (
