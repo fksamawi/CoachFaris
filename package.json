@@ -8,16 +8,16 @@
     "start": "next start",
     "lint": "next lint"
   },
-"dependencies": {
-  "next": "15.3.2",
-  "react": "^19",
-  "react-dom": "^19",
-  "next-sanity": "^9.0.0",
-  "@sanity/image-url": "^1.0.0",
-  "@vercel/analytics": "^1.0.0",
-  "@vercel/speed-insights": "^1.0.0",
-  "tailwindcss-animate": "^1.0.7"
-},
+  "dependencies": {
+    "next": "15.3.8",
+    "react": "^19",
+    "react-dom": "^19",
+    "next-sanity": "^9.0.0",
+    "@sanity/image-url": "^1.0.0",
+    "@vercel/analytics": "^1.0.0",
+    "@vercel/speed-insights": "^1.0.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
