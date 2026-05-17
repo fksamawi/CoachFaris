@@ -34,7 +34,7 @@ export async function getAboutCoaching() {
 
 export async function getAboutMe() {
   return sanityClient.fetch(
-    `*[_type == "aboutMe"][0]{bioBody,testimonials,gettingStartedBody}`,
+    `*[_type == "aboutMe"][0]{bioBody,clientOrgs,gettingStartedBody}`,
     {},
     { next: { revalidate: 60 } }
   );
